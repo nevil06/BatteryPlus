@@ -42,6 +42,10 @@ google-services.json
 # typescript
 *.tsbuildinfo
 
+# lock files
+package-lock.json
+yarn.lock
+
 # generated native folders
 /ios
 /android
