@@ -6,7 +6,7 @@ import { saveReading, getAllReadings, clearReadings } from '../services/storageS
 // Import native module (only works after prebuild)
 let BatteryNative: any = null;
 try {
-  BatteryNative = require('../../modules/battery-native').default;
+  BatteryNative = require('../../modules/battery-native/src').default;
 } catch (e) {
   console.log('Native battery module not available, using fallback');
 }
