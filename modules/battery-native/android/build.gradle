@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+group = 'expo.modules.batterynative'
+version = '1.0.0'
+
+android {
+  namespace "expo.modules.batterynative"
+  compileSdkVersion safeExtGet("compileSdkVersion", 34)
+
+  defaultConfig {
+    minSdkVersion safeExtGet("minSdkVersion", 21)
+    targetSdkVersion safeExtGet("targetSdkVersion", 34)
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_11
+    targetCompatibility JavaVersion.VERSION_11
+  }
+}
+
+dependencies {
+  implementation project(':expo-modules-core')
+}
+
+def safeExtGet(prop, fallback) {
+  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
