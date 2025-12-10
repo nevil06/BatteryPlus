@@ -38,7 +38,8 @@
             "targetSdkVersion": 34
           }
         }
-      ]
+      ],
+      "./modules/battery-native"
     ],
     "extra": {
       "eas": {
