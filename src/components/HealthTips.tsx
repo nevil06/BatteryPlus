@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { COLORS, HEALTH_TIPS } from '../utils/constants';
+import { useTranslation } from 'react-i18next';
+import { COLORS } from '../utils/constants';
 import { HealthTip } from '../types/battery';
 
 const iconMap: Record<string, keyof typeof Feather.glyphMap> = {
@@ -27,7 +28,20 @@ interface HealthTipsProps {
 }
 
 export const HealthTips: React.FC<HealthTipsProps> = ({ compact = false }) => {
+  const { t } = useTranslation();
   const [expandedTip, setExpandedTip] = useState<string | null>(null);
+
+  // Build tips array from translations
+  const HEALTH_TIPS: HealthTip[] = [
+    { id: '1', title: t('healthTips.tips.1.title'), description: t('healthTips.tips.1.description'), icon: 'thermometer', category: 'temperature' },
+    { id: '2', title: t('healthTips.tips.2.title'), description: t('healthTips.tips.2.description'), icon: 'battery-charging', category: 'charging' },
+    { id: '3', title: t('healthTips.tips.3.title'), description: t('healthTips.tips.3.description'), icon: 'zap', category: 'charging' },
+    { id: '4', title: t('healthTips.tips.4.title'), description: t('healthTips.tips.4.description'), icon: 'moon', category: 'charging' },
+    { id: '5', title: t('healthTips.tips.5.title'), description: t('healthTips.tips.5.description'), icon: 'sun', category: 'usage' },
+    { id: '6', title: t('healthTips.tips.6.title'), description: t('healthTips.tips.6.description'), icon: 'x-circle', category: 'usage' },
+    { id: '7', title: t('healthTips.tips.7.title'), description: t('healthTips.tips.7.description'), icon: 'archive', category: 'storage' },
+    { id: '8', title: t('healthTips.tips.8.title'), description: t('healthTips.tips.8.description'), icon: 'shield', category: 'usage' },
+  ];
 
   const displayTips = compact ? HEALTH_TIPS.slice(0, 4) : HEALTH_TIPS;
 
@@ -70,7 +84,7 @@ export const HealthTips: React.FC<HealthTipsProps> = ({ compact = false }) => {
             <Text style={styles.tipDescription}>{tip.description}</Text>
             <View style={[styles.categoryBadge, { backgroundColor: color + '20' }]}>
               <Text style={[styles.categoryText, { color }]}>
-                {tip.category.charAt(0).toUpperCase() + tip.category.slice(1)}
+                {t(`healthTips.categories.${tip.category}`)}
               </Text>
             </View>
           </View>
@@ -83,7 +97,7 @@ export const HealthTips: React.FC<HealthTipsProps> = ({ compact = false }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Feather name="heart" size={20} color={COLORS.danger} />
-        <Text style={styles.title}>Battery Health Tips</Text>
+        <Text style={styles.title}>{t('healthTips.title')}</Text>
       </View>
 
       <ScrollView

@@ -1,0 +1,104 @@
+{
+    "common": {
+        "appTitle": "BatteryPlus",
+        "appSubtitle": "Moniteur Intelligent de Batterie",
+        "refresh": "Actualiser",
+        "loading": "Chargement...",
+        "error": "Erreur",
+        "save": "Enregistrer",
+        "cancel": "Annuler",
+        "close": "Fermer"
+    },
+    "tabs": {
+        "dashboard": "Tableau de bord",
+        "tips": "Conseils",
+        "aiAdvisor": "Conseiller IA"
+    },
+    "dashboard": {
+        "health": "Santé",
+        "timeLeft": "Temps Restant",
+        "currentDraw": "Consommation Actuelle",
+        "cycles": "Cycles",
+        "temperature": "Température",
+        "voltage": "Tension",
+        "fromSystem": "Du système",
+        "requiresNativeBuild": "Nécessite une compilation native",
+        "pluggedIn": "Branché",
+        "realTime": "Temps réel",
+        "liveReading": "Lecture en direct",
+        "chargeCycles": "Cycles de charge",
+        "runningHot": "Surchauffe!",
+        "normal": "Normal",
+        "capacity": "Capacité de {{capacity}} mAh",
+        "nativeApi": "API Native",
+        "basicMode": "Mode Basique",
+        "charging": "En charge",
+        "unplugged": "Débranché",
+        "full": "Plein",
+        "powerSaver": "Économie d'énergie",
+        "readings": "{{count}} lectures",
+        "updatesEvery": "Mise à jour toutes les 5s",
+        "nativeNotice": "Exécutez 'npx expo prebuild' puis 'npx expo run:android' pour les données complètes de la batterie (temp, tension, cycles, courant en temps réel)"
+    },
+    "healthTips": {
+        "title": "Conseils de Santé de la Batterie",
+        "tips": {
+            "1": {
+                "title": "Évitez les Températures Extrêmes",
+                "description": "Gardez votre appareil entre 20°C et 35°C. La chaleur extrême endommage définitivement les cellules de la batterie."
+            },
+            "2": {
+                "title": "Plage de Charge Optimale",
+                "description": "Maintenez la batterie entre 20-80% pour une durée de vie maximale. Évitez les cycles complets de 0-100% régulièrement."
+            },
+            "3": {
+                "title": "Utilisez le Chargeur d'Origine",
+                "description": "Les chargeurs d'origine ou certifiés garantissent la tension et le courant appropriés pour une charge sûre."
+            },
+            "4": {
+                "title": "Évitez la Charge Nocturne",
+                "description": "Les téléphones modernes gèrent cela, mais débrancher à 80-90% prolonge la longévité de la batterie."
+            },
+            "5": {
+                "title": "Réduisez la Luminosité de l'Écran",
+                "description": "L'écran est le plus gros consommateur d'énergie. Utilisez la luminosité automatique ou gardez-la modérée."
+            },
+            "6": {
+                "title": "Fermez les Applications en Arrière-plan",
+                "description": "Les applications en arrière-plan épuisent la batterie. Fermez régulièrement les applications inutilisées."
+            },
+            "7": {
+                "title": "Stockez à 50% de Charge",
+                "description": "Si vous stockez l'appareil à long terme, gardez la batterie à 50% dans un endroit frais et sec."
+            },
+            "8": {
+                "title": "Activez l'Économiseur de Batterie",
+                "description": "Utilisez le mode économiseur de batterie en dessous de 20% pour prolonger considérablement le temps d'utilisation."
+            }
+        },
+        "categories": {
+            "charging": "Charge",
+            "temperature": "Température",
+            "usage": "Utilisation",
+            "storage": "Stockage"
+        }
+    },
+    "aiAdvisor": {
+        "title": "Conseiller IA de Batterie",
+        "subtitle": "Propulsé par Groq",
+        "getPersonalizedTip": "Obtenir un Conseil Personnalisé",
+        "getNewTip": "Obtenir un Nouveau Conseil",
+        "setupHint": "Appuyez sur le bouton pour configurer votre clé API Groq",
+        "modalTitle": "Clé API Groq",
+        "modalDescription": "Entrez votre clé API Groq pour activer les suggestions de batterie alimentées par l'IA. Obtenez-en une gratuitement sur console.groq.com",
+        "apiKeyPlaceholder": "gsk_xxxxxxxxxxxxx",
+        "saveApiKey": "Enregistrer la Clé API",
+        "enterApiKey": "Veuillez entrer une clé API",
+        "invalidApiKey": "Clé API invalide. Veuillez vérifier et réessayer.",
+        "failedToGetSuggestion": "Échec de l'obtention de la suggestion"
+    },
+    "languageSelector": {
+        "title": "Sélectionner la Langue",
+        "subtitle": "Choisissez votre langue préférée"
+    }
+}

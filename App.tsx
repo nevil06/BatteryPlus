@@ -12,6 +12,8 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 import Constants from 'expo-constants';
+import { useTranslation } from 'react-i18next';
+import './src/i18n/i18n';
 
 const STATUS_BAR_HEIGHT = Platform.OS === 'android' ? (Constants.statusBarHeight || StatusBar.currentHeight || 24) : 0;
 import { BatteryGauge } from './src/components/BatteryGauge';
@@ -19,12 +21,14 @@ import { StatsCard } from './src/components/StatsCard';
 import { TrendChart } from './src/components/TrendChart';
 import { HealthTips } from './src/components/HealthTips';
 import { AIAdvisor } from './src/components/AIAdvisor';
+import { LanguageSelector } from './src/components/LanguageSelector';
 import { useBattery } from './src/hooks/useBattery';
 import { COLORS, GRADIENTS } from './src/utils/constants';
 
 type Tab = 'dashboard' | 'tips' | 'ai';
 
 export default function App() {
+  const { t } = useTranslation();
   const {
     batteryInfo,
     readings,
@@ -123,16 +127,16 @@ export default function App() {
       {/* Stats Grid - Row 1 */}
       <View style={styles.statsGrid}>
         <StatsCard
-          title="Health"
+          title={t('dashboard.health')}
           value={health}
-          subtitle={isNativeAvailable ? 'From system' : 'Requires native build'}
+          subtitle={isNativeAvailable ? t('dashboard.fromSystem') : t('dashboard.requiresNativeBuild')}
           icon="heart"
           gradient={getHealthColor()}
         />
         <StatsCard
-          title="Time Left"
+          title={t('dashboard.timeLeft')}
           value={timeRemaining}
-          subtitle={batteryInfo.isCharging ? 'Plugged in' : isNativeAvailable ? 'Real-time' : 'Requires native build'}
+          subtitle={batteryInfo.isCharging ? t('dashboard.pluggedIn') : isNativeAvailable ? t('dashboard.realTime') : t('dashboard.requiresNativeBuild')}
           icon="clock"
           gradient={GRADIENTS.blue}
         />
@@ -141,16 +145,16 @@ export default function App() {
       {/* Stats Grid - Row 2 */}
       <View style={styles.statsGrid}>
         <StatsCard
-          title="Current Draw"
+          title={t('dashboard.currentDraw')}
           value={formatDrainRate()}
-          subtitle={drainRateMA > 0 ? 'Live reading' : 'Requires native build'}
+          subtitle={drainRateMA > 0 ? t('dashboard.liveReading') : t('dashboard.requiresNativeBuild')}
           icon="activity"
           gradient={GRADIENTS.orange}
         />
         <StatsCard
-          title="Cycles"
+          title={t('dashboard.cycles')}
           value={chargeCycles >= 0 ? chargeCycles.toString() : 'N/A'}
-          subtitle={chargeCycles >= 0 ? 'Charge cycles' : 'Requires native build'}
+          subtitle={chargeCycles >= 0 ? t('dashboard.chargeCycles') : t('dashboard.requiresNativeBuild')}
           icon="refresh-cw"
           gradient={GRADIENTS.cyan}
         />
@@ -159,16 +163,16 @@ export default function App() {
       {/* Stats Grid - Row 3 (Native data) */}
       <View style={styles.statsGrid}>
         <StatsCard
-          title="Temperature"
+          title={t('dashboard.temperature')}
           value={formatTemperature()}
-          subtitle={temperature > 40 ? 'Running hot!' : temperature > 0 ? 'Normal' : 'Requires native build'}
+          subtitle={temperature > 40 ? t('dashboard.runningHot') : temperature > 0 ? t('dashboard.normal') : t('dashboard.requiresNativeBuild')}
           icon="thermometer"
           gradient={temperature > 40 ? GRADIENTS.red : GRADIENTS.green}
         />
         <StatsCard
-          title="Voltage"
+          title={t('dashboard.voltage')}
           value={formatVoltage()}
-          subtitle={designCapacity > 0 ? `${designCapacity} mAh capacity` : 'Requires native build'}
+          subtitle={designCapacity > 0 ? t('dashboard.capacity', { capacity: designCapacity }) : t('dashboard.requiresNativeBuild')}
           icon="zap"
           gradient={GRADIENTS.purple}
         />
@@ -182,7 +186,7 @@ export default function App() {
             { backgroundColor: isNativeAvailable ? COLORS.primary : COLORS.warning }
           ]} />
           <Text style={styles.statusLabel}>
-            {isNativeAvailable ? 'Native API' : 'Basic Mode'}
+            {isNativeAvailable ? t('dashboard.nativeApi') : t('dashboard.basicMode')}
           </Text>
         </View>
         <View style={styles.statusItem}>
@@ -197,7 +201,7 @@ export default function App() {
         {batteryInfo.lowPowerMode && (
           <View style={styles.statusItem}>
             <View style={[styles.statusDot, { backgroundColor: COLORS.warning }]} />
-            <Text style={styles.statusLabel}>Power Saver</Text>
+            <Text style={styles.statusLabel}>{t('dashboard.powerSaver')}</Text>
           </View>
         )}
       </View>
@@ -210,7 +214,7 @@ export default function App() {
         <View style={styles.noticeContainer}>
           <Feather name="info" size={16} color={COLORS.warning} />
           <Text style={styles.noticeText}>
-            Run 'npx expo prebuild' then 'npx expo run:android' for full battery data (temp, voltage, cycles, real-time current)
+            {t('dashboard.nativeNotice')}
           </Text>
         </View>
       )}
@@ -232,19 +236,22 @@ export default function App() {
       >
         <View style={styles.headerContent}>
           <View>
-            <Text style={styles.appTitle}>BatteryPlus</Text>
-            <Text style={styles.appSubtitle}>Smart Battery Monitor</Text>
+            <Text style={styles.appTitle}>{t('common.appTitle')}</Text>
+            <Text style={styles.appSubtitle}>{t('common.appSubtitle')}</Text>
           </View>
-          <TouchableOpacity style={styles.refreshButton} onPress={refresh}>
-            <Feather name="refresh-cw" size={20} color={COLORS.textSecondary} />
-          </TouchableOpacity>
+          <View style={styles.headerButtons}>
+            <LanguageSelector />
+            <TouchableOpacity style={styles.refreshButton} onPress={refresh}>
+              <Feather name="refresh-cw" size={20} color={COLORS.textSecondary} />
+            </TouchableOpacity>
+          </View>
         </View>
 
         {/* Tab Bar */}
         <View style={styles.tabBar}>
-          {renderTab('dashboard', 'grid', 'Dashboard')}
-          {renderTab('tips', 'heart', 'Tips')}
-          {renderTab('ai', 'cpu', 'AI Advisor')}
+          {renderTab('dashboard', 'grid', t('tabs.dashboard'))}
+          {renderTab('tips', 'heart', t('tabs.tips'))}
+          {renderTab('ai', 'cpu', t('tabs.aiAdvisor'))}
         </View>
       </LinearGradient>
 
@@ -271,11 +278,11 @@ export default function App() {
         {/* Footer */}
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            {readings.length} readings
+            {t('dashboard.readings', { count: readings.length })}
           </Text>
           <Text style={styles.footerText}>•</Text>
           <Text style={styles.footerText}>
-            Updates every 5s
+            {t('dashboard.updatesEvery')}
           </Text>
         </View>
       </ScrollView>
@@ -297,6 +304,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 20,
+  },
+  headerButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
   },
   appTitle: {
     fontSize: 28,

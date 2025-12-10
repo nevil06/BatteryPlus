@@ -1,0 +1,104 @@
+{
+    "common": {
+        "appTitle": "BatteryPlus",
+        "appSubtitle": "Intelligenter Batteriemonitor",
+        "refresh": "Aktualisieren",
+        "loading": "Lädt...",
+        "error": "Fehler",
+        "save": "Speichern",
+        "cancel": "Abbrechen",
+        "close": "Schließen"
+    },
+    "tabs": {
+        "dashboard": "Dashboard",
+        "tips": "Tipps",
+        "aiAdvisor": "KI-Berater"
+    },
+    "dashboard": {
+        "health": "Gesundheit",
+        "timeLeft": "Verbleibende Zeit",
+        "currentDraw": "Aktueller Verbrauch",
+        "cycles": "Zyklen",
+        "temperature": "Temperatur",
+        "voltage": "Spannung",
+        "fromSystem": "Vom System",
+        "requiresNativeBuild": "Erfordert nativen Build",
+        "pluggedIn": "Angeschlossen",
+        "realTime": "Echtzeit",
+        "liveReading": "Live-Messung",
+        "chargeCycles": "Ladezyklen",
+        "runningHot": "Überhitzt!",
+        "normal": "Normal",
+        "capacity": "{{capacity}} mAh Kapazität",
+        "nativeApi": "Native API",
+        "basicMode": "Basismodus",
+        "charging": "Lädt",
+        "unplugged": "Nicht angeschlossen",
+        "full": "Voll",
+        "powerSaver": "Energiesparmodus",
+        "readings": "{{count}} Messungen",
+        "updatesEvery": "Aktualisiert alle 5s",
+        "nativeNotice": "Führen Sie 'npx expo prebuild' und dann 'npx expo run:android' aus, um vollständige Batteriedaten zu erhalten (Temp, Spannung, Zyklen, Echtzeit-Strom)"
+    },
+    "healthTips": {
+        "title": "Tipps zur Batteriegesundheit",
+        "tips": {
+            "1": {
+                "title": "Extreme Temperaturen Vermeiden",
+                "description": "Halten Sie Ihr Gerät zwischen 20°C und 35°C. Extreme Hitze beschädigt Batteriezellen dauerhaft."
+            },
+            "2": {
+                "title": "Optimaler Ladebereich",
+                "description": "Halten Sie die Batterie zwischen 20-80% für maximale Lebensdauer. Vermeiden Sie regelmäßig vollständige 0-100% Zyklen."
+            },
+            "3": {
+                "title": "Original-Ladegerät Verwenden",
+                "description": "Original- oder zertifizierte Ladegeräte gewährleisten die richtige Spannung und Strom für sicheres Laden."
+            },
+            "4": {
+                "title": "Nächtliches Laden Vermeiden",
+                "description": "Moderne Telefone handhaben dies, aber das Trennen bei 80-90% verlängert die Batterielebensdauer."
+            },
+            "5": {
+                "title": "Bildschirmhelligkeit Reduzieren",
+                "description": "Das Display ist der größte Energieverbraucher. Verwenden Sie Auto-Helligkeit oder halten Sie sie moderat."
+            },
+            "6": {
+                "title": "Hintergrund-Apps Schließen",
+                "description": "Apps im Hintergrund entleeren die Batterie. Schließen Sie regelmäßig ungenutzte Anwendungen."
+            },
+            "7": {
+                "title": "Bei 50% Ladung Lagern",
+                "description": "Bei langfristiger Lagerung des Geräts halten Sie die Batterie bei 50% an einem kühlen, trockenen Ort."
+            },
+            "8": {
+                "title": "Batteriesparmodus Aktivieren",
+                "description": "Verwenden Sie den Batteriesparmodus unter 20%, um die Nutzungszeit erheblich zu verlängern."
+            }
+        },
+        "categories": {
+            "charging": "Laden",
+            "temperature": "Temperatur",
+            "usage": "Nutzung",
+            "storage": "Lagerung"
+        }
+    },
+    "aiAdvisor": {
+        "title": "KI-Batterieberater",
+        "subtitle": "Betrieben von Groq",
+        "getPersonalizedTip": "Personalisierten Tipp Erhalten",
+        "getNewTip": "Neuen Tipp Erhalten",
+        "setupHint": "Tippen Sie auf die Schaltfläche, um Ihren Groq API-Schlüssel einzurichten",
+        "modalTitle": "Groq API-Schlüssel",
+        "modalDescription": "Geben Sie Ihren Groq API-Schlüssel ein, um KI-gestützte Batterievorschläge zu aktivieren. Holen Sie sich einen kostenlos bei console.groq.com",
+        "apiKeyPlaceholder": "gsk_xxxxxxxxxxxxx",
+        "saveApiKey": "API-Schlüssel Speichern",
+        "enterApiKey": "Bitte geben Sie einen API-Schlüssel ein",
+        "invalidApiKey": "Ungültiger API-Schlüssel. Bitte überprüfen und erneut versuchen.",
+        "failedToGetSuggestion": "Vorschlag konnte nicht abgerufen werden"
+    },
+    "languageSelector": {
+        "title": "Sprache Auswählen",
+        "subtitle": "Wählen Sie Ihre bevorzugte Sprache"
+    }
+}

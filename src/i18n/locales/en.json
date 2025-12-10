@@ -1,0 +1,104 @@
+{
+    "common": {
+        "appTitle": "BatteryPlus",
+        "appSubtitle": "Smart Battery Monitor",
+        "refresh": "Refresh",
+        "loading": "Loading...",
+        "error": "Error",
+        "save": "Save",
+        "cancel": "Cancel",
+        "close": "Close"
+    },
+    "tabs": {
+        "dashboard": "Dashboard",
+        "tips": "Tips",
+        "aiAdvisor": "AI Advisor"
+    },
+    "dashboard": {
+        "health": "Health",
+        "timeLeft": "Time Left",
+        "currentDraw": "Current Draw",
+        "cycles": "Cycles",
+        "temperature": "Temperature",
+        "voltage": "Voltage",
+        "fromSystem": "From system",
+        "requiresNativeBuild": "Requires native build",
+        "pluggedIn": "Plugged in",
+        "realTime": "Real-time",
+        "liveReading": "Live reading",
+        "chargeCycles": "Charge cycles",
+        "runningHot": "Running hot!",
+        "normal": "Normal",
+        "capacity": "{{capacity}} mAh capacity",
+        "nativeApi": "Native API",
+        "basicMode": "Basic Mode",
+        "charging": "Charging",
+        "unplugged": "Unplugged",
+        "full": "Full",
+        "powerSaver": "Power Saver",
+        "readings": "{{count}} readings",
+        "updatesEvery": "Updates every 5s",
+        "nativeNotice": "Run 'npx expo prebuild' then 'npx expo run:android' for full battery data (temp, voltage, cycles, real-time current)"
+    },
+    "healthTips": {
+        "title": "Battery Health Tips",
+        "tips": {
+            "1": {
+                "title": "Avoid Extreme Temperatures",
+                "description": "Keep your device between 20°C and 35°C. Extreme heat damages battery cells permanently."
+            },
+            "2": {
+                "title": "Optimal Charging Range",
+                "description": "Keep battery between 20-80% for longest lifespan. Avoid full 0-100% cycles regularly."
+            },
+            "3": {
+                "title": "Use Original Charger",
+                "description": "Original or certified chargers ensure proper voltage and current for safe charging."
+            },
+            "4": {
+                "title": "Avoid Overnight Charging",
+                "description": "Modern phones handle this, but unplugging at 80-90% extends battery longevity."
+            },
+            "5": {
+                "title": "Reduce Screen Brightness",
+                "description": "Display is the biggest power consumer. Use auto-brightness or keep it moderate."
+            },
+            "6": {
+                "title": "Close Background Apps",
+                "description": "Apps running in background drain battery. Regularly close unused applications."
+            },
+            "7": {
+                "title": "Store at 50% Charge",
+                "description": "If storing device long-term, keep battery at 50% in a cool, dry place."
+            },
+            "8": {
+                "title": "Enable Battery Saver",
+                "description": "Use battery saver mode when below 20% to extend usage time significantly."
+            }
+        },
+        "categories": {
+            "charging": "Charging",
+            "temperature": "Temperature",
+            "usage": "Usage",
+            "storage": "Storage"
+        }
+    },
+    "aiAdvisor": {
+        "title": "AI Battery Advisor",
+        "subtitle": "Powered by Groq",
+        "getPersonalizedTip": "Get Personalized Tip",
+        "getNewTip": "Get New Tip",
+        "setupHint": "Tap the button to set up your Groq API key",
+        "modalTitle": "Groq API Key",
+        "modalDescription": "Enter your Groq API key to enable AI-powered battery suggestions. Get one free at console.groq.com",
+        "apiKeyPlaceholder": "gsk_xxxxxxxxxxxxx",
+        "saveApiKey": "Save API Key",
+        "enterApiKey": "Please enter an API key",
+        "invalidApiKey": "Invalid API key. Please check and try again.",
+        "failedToGetSuggestion": "Failed to get suggestion"
+    },
+    "languageSelector": {
+        "title": "Select Language",
+        "subtitle": "Choose your preferred language"
+    }
+}

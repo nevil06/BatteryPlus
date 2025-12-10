@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { BatteryInfo, BatteryReading } from '../types/battery';
 import { generateBatterySuggestion, validateApiKey } from '../services/groqService';
 import { saveGroqApiKey, getGroqApiKey, saveLastAISuggestion } from '../services/storageService';
@@ -21,6 +22,7 @@ interface AIAdvisorProps {
 }
 
 export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) => {
+  const { t } = useTranslation();
   const [suggestion, setSuggestion] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -40,7 +42,7 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
 
   const handleSaveApiKey = async () => {
     if (!apiKey.trim()) {
-      setError('Please enter an API key');
+      setError(t('aiAdvisor.enterApiKey'));
       return;
     }
 
@@ -54,7 +56,7 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
       setShowApiModal(false);
       setError(null);
     } else {
-      setError('Invalid API key. Please check and try again.');
+      setError(t('aiAdvisor.invalidApiKey'));
     }
 
     setIsLoading(false);
@@ -75,7 +77,7 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
       setSuggestion(response);
       await saveLastAISuggestion(response);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to get suggestion');
+      setError(err instanceof Error ? err.message : t('aiAdvisor.failedToGetSuggestion'));
     } finally {
       setIsLoading(false);
     }
@@ -95,8 +97,8 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
               <Feather name="cpu" size={20} color={COLORS.accent} />
             </View>
             <View>
-              <Text style={styles.title}>AI Battery Advisor</Text>
-              <Text style={styles.subtitle}>Powered by Groq</Text>
+              <Text style={styles.title}>{t('aiAdvisor.title')}</Text>
+              <Text style={styles.subtitle}>{t('aiAdvisor.subtitle')}</Text>
             </View>
           </View>
 
@@ -138,7 +140,7 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
               <>
                 <Feather name="zap" size={18} color={COLORS.text} />
                 <Text style={styles.buttonText}>
-                  {suggestion ? 'Get New Tip' : 'Get Personalized Tip'}
+                  {suggestion ? t('aiAdvisor.getNewTip') : t('aiAdvisor.getPersonalizedTip')}
                 </Text>
               </>
             )}
@@ -147,7 +149,7 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
 
         {!hasApiKey && (
           <Text style={styles.setupHint}>
-            Tap the button to set up your Groq API key
+            {t('aiAdvisor.setupHint')}
           </Text>
         )}
       </LinearGradient>
@@ -162,20 +164,19 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>Groq API Key</Text>
+              <Text style={styles.modalTitle}>{t('aiAdvisor.modalTitle')}</Text>
               <TouchableOpacity onPress={() => setShowApiModal(false)}>
                 <Feather name="x" size={24} color={COLORS.textMuted} />
               </TouchableOpacity>
             </View>
 
             <Text style={styles.modalDescription}>
-              Enter your Groq API key to enable AI-powered battery suggestions.
-              Get one free at console.groq.com
+              {t('aiAdvisor.modalDescription')}
             </Text>
 
             <TextInput
               style={styles.input}
-              placeholder="gsk_xxxxxxxxxxxxx"
+              placeholder={t('aiAdvisor.apiKeyPlaceholder')}
               placeholderTextColor={COLORS.textMuted}
               value={apiKey}
               onChangeText={setApiKey}
@@ -196,7 +197,7 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ batteryInfo, readings }) =
               {isLoading ? (
                 <ActivityIndicator color={COLORS.text} size="small" />
               ) : (
-                <Text style={styles.modalButtonText}>Save API Key</Text>
+                <Text style={styles.modalButtonText}>{t('aiAdvisor.saveApiKey')}</Text>
               )}
             </TouchableOpacity>
           </View>

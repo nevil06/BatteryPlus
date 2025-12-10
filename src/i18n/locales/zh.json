@@ -1,0 +1,104 @@
+{
+    "common": {
+        "appTitle": "BatteryPlus",
+        "appSubtitle": "智能电池监控",
+        "refresh": "刷新",
+        "loading": "加载中...",
+        "error": "错误",
+        "save": "保存",
+        "cancel": "取消",
+        "close": "关闭"
+    },
+    "tabs": {
+        "dashboard": "仪表板",
+        "tips": "提示",
+        "aiAdvisor": "AI顾问"
+    },
+    "dashboard": {
+        "health": "健康",
+        "timeLeft": "剩余时间",
+        "currentDraw": "当前消耗",
+        "cycles": "循环",
+        "temperature": "温度",
+        "voltage": "电压",
+        "fromSystem": "来自系统",
+        "requiresNativeBuild": "需要原生构建",
+        "pluggedIn": "已插电",
+        "realTime": "实时",
+        "liveReading": "实时读数",
+        "chargeCycles": "充电循环",
+        "runningHot": "过热！",
+        "normal": "正常",
+        "capacity": "{{capacity}} mAh 容量",
+        "nativeApi": "原生API",
+        "basicMode": "基础模式",
+        "charging": "充电中",
+        "unplugged": "未插电",
+        "full": "已充满",
+        "powerSaver": "省电模式",
+        "readings": "{{count}} 次读数",
+        "updatesEvery": "每5秒更新",
+        "nativeNotice": "运行 'npx expo prebuild' 然后 'npx expo run:android' 以获取完整电池数据（温度、电压、循环、实时电流）"
+    },
+    "healthTips": {
+        "title": "电池健康提示",
+        "tips": {
+            "1": {
+                "title": "避免极端温度",
+                "description": "将设备保持在20°C至35°C之间。极端高温会永久损坏电池单元。"
+            },
+            "2": {
+                "title": "最佳充电范围",
+                "description": "将电池保持在20-80%之间以获得最长寿命。避免经常进行完整的0-100%循环。"
+            },
+            "3": {
+                "title": "使用原装充电器",
+                "description": "原装或认证充电器可确保安全充电所需的适当电压和电流。"
+            },
+            "4": {
+                "title": "避免整夜充电",
+                "description": "现代手机可以处理这个问题，但在80-90%时拔掉插头可以延长电池寿命。"
+            },
+            "5": {
+                "title": "降低屏幕亮度",
+                "description": "显示屏是最大的耗电设备。使用自动亮度或保持适中。"
+            },
+            "6": {
+                "title": "关闭后台应用",
+                "description": "后台运行的应用会耗尽电池。定期关闭未使用的应用程序。"
+            },
+            "7": {
+                "title": "以50%电量存储",
+                "description": "如果长期存储设备，请将电池保持在50%，放在阴凉干燥的地方。"
+            },
+            "8": {
+                "title": "启用省电模式",
+                "description": "当电量低于20%时使用省电模式，可显著延长使用时间。"
+            }
+        },
+        "categories": {
+            "charging": "充电",
+            "temperature": "温度",
+            "usage": "使用",
+            "storage": "存储"
+        }
+    },
+    "aiAdvisor": {
+        "title": "AI电池顾问",
+        "subtitle": "由Groq提供支持",
+        "getPersonalizedTip": "获取个性化提示",
+        "getNewTip": "获取新提示",
+        "setupHint": "点击按钮设置您的Groq API密钥",
+        "modalTitle": "Groq API密钥",
+        "modalDescription": "输入您的Groq API密钥以启用AI驱动的电池建议。在console.groq.com免费获取",
+        "apiKeyPlaceholder": "gsk_xxxxxxxxxxxxx",
+        "saveApiKey": "保存API密钥",
+        "enterApiKey": "请输入API密钥",
+        "invalidApiKey": "无效的API密钥。请检查并重试。",
+        "failedToGetSuggestion": "获取建议失败"
+    },
+    "languageSelector": {
+        "title": "选择语言",
+        "subtitle": "选择您的首选语言"
+    }
+}

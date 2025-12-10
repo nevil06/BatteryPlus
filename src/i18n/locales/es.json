@@ -1,0 +1,104 @@
+{
+    "common": {
+        "appTitle": "BatteryPlus",
+        "appSubtitle": "Monitor Inteligente de Batería",
+        "refresh": "Actualizar",
+        "loading": "Cargando...",
+        "error": "Error",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "close": "Cerrar"
+    },
+    "tabs": {
+        "dashboard": "Panel",
+        "tips": "Consejos",
+        "aiAdvisor": "Asesor IA"
+    },
+    "dashboard": {
+        "health": "Salud",
+        "timeLeft": "Tiempo Restante",
+        "currentDraw": "Consumo Actual",
+        "cycles": "Ciclos",
+        "temperature": "Temperatura",
+        "voltage": "Voltaje",
+        "fromSystem": "Del sistema",
+        "requiresNativeBuild": "Requiere compilación nativa",
+        "pluggedIn": "Conectado",
+        "realTime": "Tiempo real",
+        "liveReading": "Lectura en vivo",
+        "chargeCycles": "Ciclos de carga",
+        "runningHot": "¡Sobrecalentado!",
+        "normal": "Normal",
+        "capacity": "Capacidad de {{capacity}} mAh",
+        "nativeApi": "API Nativa",
+        "basicMode": "Modo Básico",
+        "charging": "Cargando",
+        "unplugged": "Desconectado",
+        "full": "Completo",
+        "powerSaver": "Ahorro de Energía",
+        "readings": "{{count}} lecturas",
+        "updatesEvery": "Actualiza cada 5s",
+        "nativeNotice": "Ejecuta 'npx expo prebuild' y luego 'npx expo run:android' para datos completos de batería (temp, voltaje, ciclos, corriente en tiempo real)"
+    },
+    "healthTips": {
+        "title": "Consejos de Salud de Batería",
+        "tips": {
+            "1": {
+                "title": "Evita Temperaturas Extremas",
+                "description": "Mantén tu dispositivo entre 20°C y 35°C. El calor extremo daña las celdas de la batería permanentemente."
+            },
+            "2": {
+                "title": "Rango Óptimo de Carga",
+                "description": "Mantén la batería entre 20-80% para mayor vida útil. Evita ciclos completos de 0-100% regularmente."
+            },
+            "3": {
+                "title": "Usa el Cargador Original",
+                "description": "Los cargadores originales o certificados aseguran el voltaje y corriente adecuados para una carga segura."
+            },
+            "4": {
+                "title": "Evita Cargar Durante la Noche",
+                "description": "Los teléfonos modernos lo manejan, pero desconectar al 80-90% extiende la longevidad de la batería."
+            },
+            "5": {
+                "title": "Reduce el Brillo de Pantalla",
+                "description": "La pantalla es el mayor consumidor de energía. Usa brillo automático o manténlo moderado."
+            },
+            "6": {
+                "title": "Cierra Aplicaciones en Segundo Plano",
+                "description": "Las aplicaciones en segundo plano agotan la batería. Cierra regularmente las aplicaciones no utilizadas."
+            },
+            "7": {
+                "title": "Almacena con 50% de Carga",
+                "description": "Si guardas el dispositivo a largo plazo, mantén la batería al 50% en un lugar fresco y seco."
+            },
+            "8": {
+                "title": "Activa el Ahorro de Batería",
+                "description": "Usa el modo de ahorro de batería cuando esté por debajo del 20% para extender significativamente el tiempo de uso."
+            }
+        },
+        "categories": {
+            "charging": "Carga",
+            "temperature": "Temperatura",
+            "usage": "Uso",
+            "storage": "Almacenamiento"
+        }
+    },
+    "aiAdvisor": {
+        "title": "Asesor IA de Batería",
+        "subtitle": "Impulsado por Groq",
+        "getPersonalizedTip": "Obtener Consejo Personalizado",
+        "getNewTip": "Obtener Nuevo Consejo",
+        "setupHint": "Toca el botón para configurar tu clave API de Groq",
+        "modalTitle": "Clave API de Groq",
+        "modalDescription": "Ingresa tu clave API de Groq para habilitar sugerencias de batería impulsadas por IA. Obtén una gratis en console.groq.com",
+        "apiKeyPlaceholder": "gsk_xxxxxxxxxxxxx",
+        "saveApiKey": "Guardar Clave API",
+        "enterApiKey": "Por favor ingresa una clave API",
+        "invalidApiKey": "Clave API inválida. Por favor verifica e intenta de nuevo.",
+        "failedToGetSuggestion": "Error al obtener sugerencia"
+    },
+    "languageSelector": {
+        "title": "Seleccionar Idioma",
+        "subtitle": "Elige tu idioma preferido"
+    }
+}
